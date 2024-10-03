@@ -1,2 +1,0 @@
-# evaklq.github.io
-Materials
