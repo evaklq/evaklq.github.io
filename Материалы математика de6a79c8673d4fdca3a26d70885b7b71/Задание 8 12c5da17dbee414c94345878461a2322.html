@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Задание 8</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="12c5da17-dbee-414c-9434-5878461a2322" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">8️⃣</span></div><h1 class="page-title">Задание 8</h1><p class="page-description"></p></header><div class="page-body"><h1 id="1e7d6793-ee81-4113-b839-d42a2bcb7b75" class="">8 задание</h1><h3 id="8a31c52c-879a-4597-acba-4a743b55ccf0" class="">8.1 - 8.7 Дана обычная функция</h3><p id="0f2823a0-9c41-4508-b13e-d3f2980df17f" class="">8.1</p><figure id="d3ab2e19-4f17-40ff-bc1f-b1543005987a" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets416mSE3wIPnBI18RRQipnVPCBMukybnK786NyLKk-fU.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets416mSE3wIPnBI18RRQipnVPCBMukybnK786NyLKk-fU.blob"/></a></figure><figure id="4c67ee47-ddb7-48e1-90ec-e5cedb1ab887" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsesO0fyf5i8VPTPIcykeNQiPk1noosePZOiVj1MLqus0.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsesO0fyf5i8VPTPIcykeNQiPk1noosePZOiVj1MLqus0.blob"/></a></figure><p id="058054ab-9b05-4d84-b128-ba42330be142" class="">8.2</p><figure id="87ca67f4-46d4-4682-a9a1-0d161f022c0a" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsfTppmYy3FsYExVgH2z6uKL7-7_86NLDaAS-laHAS5IQ.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsfTppmYy3FsYExVgH2z6uKL7-7_86NLDaAS-laHAS5IQ.blob"/></a></figure><figure id="54e71d9e-e2d2-445e-a0c0-8e3e40db6732" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets-lEvTWmaACXhwgx63XLszJeHTt5ot0nrSYs5H2E30Sc.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets-lEvTWmaACXhwgx63XLszJeHTt5ot0nrSYs5H2E30Sc.blob"/></a></figure><p id="a3608ae9-ec34-404f-825d-7b852120e3a5" class="">8.3</p><figure id="7756b253-fca2-4e29-9c68-aaa2c2d67faa" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsFm32Akw-5RQ0i0MmIBJXP6-wm_3ciijBn-L118Ot8vw.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsFm32Akw-5RQ0i0MmIBJXP6-wm_3ciijBn-L118Ot8vw.blob"/></a></figure><figure id="07ae2c32-a5e3-46bb-a9e6-ef52830937ec" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsTFYLXE3WOB4rwwkIqLsaQXcQceZ6qusW12gQWtxN7ZM.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsTFYLXE3WOB4rwwkIqLsaQXcQceZ6qusW12gQWtxN7ZM.blob"/></a></figure><p id="3837d107-d734-4950-b5c8-7c185694c37a" class="">8.4</p><figure id="0f750ea1-fa94-485e-9726-32e254f136b1" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets5-5bRwbQEu_qc8rHCEFBMBL1bmD7joVSBiI_45z8Prs.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets5-5bRwbQEu_qc8rHCEFBMBL1bmD7joVSBiI_45z8Prs.blob"/></a></figure><figure id="39fa8989-d70e-4842-9475-d9cef68c0869" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsCuCNlYJWGEinsSrPOQyh-wlDc9VdszLYkXZJ0SnyCkI.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsCuCNlYJWGEinsSrPOQyh-wlDc9VdszLYkXZJ0SnyCkI.blob"/></a></figure><p id="5667f3a8-4b27-43b5-a88e-1686100e3020" class="">8.5</p><figure id="851f0a83-5ff5-41ac-9fb1-c0889dd15ec3" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets-VmAH1YIzM-XYnuHcrynishGK64lV6Mw5Pr5-pcNWNs.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets-VmAH1YIzM-XYnuHcrynishGK64lV6Mw5Pr5-pcNWNs.blob"/></a></figure><figure id="2f7468ae-5564-4939-8271-b2d74f5efb0f" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets-HV8zIq9_I1UqsEPkYdbndGnhts_ekhjTSAXmiMGpA8.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets-HV8zIq9_I1UqsEPkYdbndGnhts_ekhjTSAXmiMGpA8.blob"/></a></figure><p id="758c60b8-ab8f-4e1d-ae4b-e151ab50b2ae" class="">8.6</p><figure id="3da91f03-d535-4e69-bf9a-fbc0886bf6d2" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetspFkoXIB7H52vAYkbByiIr0k6w_8ELFQH7GEpyZJlk5E.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetspFkoXIB7H52vAYkbByiIr0k6w_8ELFQH7GEpyZJlk5E.blob"/></a></figure><figure id="5363009f-1f88-4dab-96ab-7cea67be5a58" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets3IU12dAad91FRh5zOJm13dlttKNs1BGU6T1VXj_DKeQ.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets3IU12dAad91FRh5zOJm13dlttKNs1BGU6T1VXj_DKeQ.blob"/></a></figure><p id="76a77451-2586-4dc2-a8d6-90227f1abafe" class="">8.7</p><figure id="7757310c-2cee-4eb7-9778-59ea2552a26a" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsJNX6uOVU7Vs_PuzQTl9H6wnT2nYOj7LFbtz3hGbXr2w.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsJNX6uOVU7Vs_PuzQTl9H6wnT2nYOj7LFbtz3hGbXr2w.blob"/></a></figure><figure id="00b5aafd-6104-4b90-a6d8-6478d4ab4156" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsta04Pku1_zcIHcXbX4m4lPpZrxrVXNByY62WmFF2ekY.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsta04Pku1_zcIHcXbX4m4lPpZrxrVXNByY62WmFF2ekY.blob"/></a></figure><h3 id="2cc7b713-3fe6-49ca-8860-fc9d80ae99cb" class="">8.8 - 8.17 Дан график производной</h3><p id="8aeea558-c51a-49a1-90ba-b06d956bb0b5" class="">8.8</p><figure id="c0177973-eefc-4083-b8f4-ac0b15dce909" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsnMTuPT4vYE2_XxEVCGWsVeRGSwh7Jqsgm5o9kUH4MBs.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsnMTuPT4vYE2_XxEVCGWsVeRGSwh7Jqsgm5o9kUH4MBs.blob"/></a></figure><figure id="43e7b9ef-68a4-44ac-9541-ce5c8d47fef6" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsqoAa2sKmmJdvnRcZ61rSkfwpIbUBvSi4xDGgcRFpbTY.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsqoAa2sKmmJdvnRcZ61rSkfwpIbUBvSi4xDGgcRFpbTY.blob"/></a></figure><p id="2f455e74-b70a-46d0-9929-a876e49b2f05" class="">8.9</p><figure id="90771b2f-af9c-4184-b04e-a856fc03e489" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsrUPIPAqr9JNITCwipbBl4Xyr2S7DdjFBLt_EbHrhcjs.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsrUPIPAqr9JNITCwipbBl4Xyr2S7DdjFBLt_EbHrhcjs.blob"/></a></figure><figure id="5e044b21-cb3a-46de-8bfc-4c8991b36345" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsREt0TAZ-AHUNO1LrpVpB0gKu2KPIVJCq4Fh2_OY7zdI.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsREt0TAZ-AHUNO1LrpVpB0gKu2KPIVJCq4Fh2_OY7zdI.blob"/></a></figure><p id="a8fa4a54-aff9-4b87-95e1-5fadc5df6eb0" class="">8.10</p><figure id="7b5a1183-fbb0-4465-96aa-4fa154a5a067" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets16ijo6g3BqFbattRqFnLIrHtFrZ3xyEerhlP5I34DUk.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets16ijo6g3BqFbattRqFnLIrHtFrZ3xyEerhlP5I34DUk.blob"/></a></figure><figure id="17182681-f4d9-49d8-ac9d-f5e63064a23c" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsL1OcxKSo9j2zNo2pSbjs7bC3FThvJIuzfw0uimbTn9Y.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsL1OcxKSo9j2zNo2pSbjs7bC3FThvJIuzfw0uimbTn9Y.blob"/></a></figure><p id="9a8ff04d-7c9e-4511-9aaf-3f771a579a29" class="">8.11</p><figure id="f44df420-b976-4898-8b9f-38886aad1985" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsYn-wDhbqVJAMZ3LYOq9ddVP5lrpIHJMxCoZ1QalqDE4.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsYn-wDhbqVJAMZ3LYOq9ddVP5lrpIHJMxCoZ1QalqDE4.blob"/></a></figure><figure id="d3a94c44-0415-4599-b7b3-787c032ebc5b" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsBLgxOYfXL9lTeA22Xz3d3MZ6f5fxqHp7Gi63sUst778.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsBLgxOYfXL9lTeA22Xz3d3MZ6f5fxqHp7Gi63sUst778.blob"/></a></figure><p id="31f695c2-d598-4691-bfe0-41e2e94eee89" class="">8.12</p><figure id="72f79082-82b2-4bc2-8c08-bcf4ec236829" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsd2511ZIy46C8IZqX3joibzvwpv_HqdlCRiIyWvE308U.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsd2511ZIy46C8IZqX3joibzvwpv_HqdlCRiIyWvE308U.blob"/></a></figure><figure id="9c205089-858e-4c70-8c33-239d88284a14" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets5q521ujLXZA5BHt52sl-upwdiAGpnw_ty0deGpIabYA.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets5q521ujLXZA5BHt52sl-upwdiAGpnw_ty0deGpIabYA.blob"/></a></figure><p id="a87d869d-795b-4d23-b379-b019e9f5192e" class="">8.13</p><figure id="46e6b7ec-5b8c-45c6-b229-1a5d58af3577" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsj8GQ5gyxlY5yrBLL0JMe4wq1auihxCkaHHbtTMjOAOU.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsj8GQ5gyxlY5yrBLL0JMe4wq1auihxCkaHHbtTMjOAOU.blob"/></a></figure><figure id="f5947fbc-9027-421a-a66a-a01a0c5e6214" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsuRmz3p5hRVyHU2-3yaJYc9ucxTgM_SeRy_p9FB8tJJw.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsuRmz3p5hRVyHU2-3yaJYc9ucxTgM_SeRy_p9FB8tJJw.blob"/></a></figure><p id="cba762c7-e29c-4f62-a843-6d54de151c5a" class="">8.14</p><figure id="7d57e345-838a-41be-9eaf-4398b84664d2" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsizl23-Lt63rcutPksb2j3saPPGODyxB6cMyB0sZ9piQ.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsizl23-Lt63rcutPksb2j3saPPGODyxB6cMyB0sZ9piQ.blob"/></a></figure><figure id="e7611a5c-3059-4cff-81e9-0c0fbebf12c7" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets69Tc1gLFqdDVd9kSkxXm00xAxnUE0vHmdtyx5B0ymlY.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets69Tc1gLFqdDVd9kSkxXm00xAxnUE0vHmdtyx5B0ymlY.blob"/></a></figure><p id="8714014f-99e3-4a85-8a4e-a400ce990c76" class="">8.15</p><figure id="6bbe584f-d8e5-4d8c-be80-67280d6749f6" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetswse5HE-DSyhBbd98EPhgKpsbXa-Bau-rm5ZThsw9fno.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetswse5HE-DSyhBbd98EPhgKpsbXa-Bau-rm5ZThsw9fno.blob"/></a></figure><figure id="aa7011e6-2bcc-46e4-8942-a69f3de8a1ed" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetssYxR1tk6Zy4qFBCgOfSzJGiObU4qq9F4byrFNvW3rpM.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetssYxR1tk6Zy4qFBCgOfSzJGiObU4qq9F4byrFNvW3rpM.blob"/></a></figure><p id="bb098cc9-35b0-41a1-932e-9ec2201ec9f9" class="">8.16</p><figure id="f96affd3-47f8-4d5d-9293-758a3e6cc85d" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetshhPkSRU_EuLmcBBt7uJOMquh5VquLsMjAm9u9ntB8JU.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetshhPkSRU_EuLmcBBt7uJOMquh5VquLsMjAm9u9ntB8JU.blob"/></a></figure><figure id="77d4e56d-f9dc-4729-a429-a0e6c4dd0a41" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsMQ0vsSV_73EdRUQOB5W_29gaEtb8-xfKYIiH5pkNmxI.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsMQ0vsSV_73EdRUQOB5W_29gaEtb8-xfKYIiH5pkNmxI.blob"/></a></figure><p id="14d18633-e623-49b5-b4e6-6fbd2751a1ea" class="">8.17</p><figure id="2977b6a8-5854-426c-94b9-c9a081bd0551" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets7KYhLxISZYife10_4ic4ydIhY12zPXMouOOC8vEKLSo.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets7KYhLxISZYife10_4ic4ydIhY12zPXMouOOC8vEKLSo.blob"/></a></figure><figure id="82f2eea4-98bb-416f-bdb8-e68a366df1a7" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsj7RzeQ6M8dc2yDipr1AmpxJU4SllZ-FahwhFAFZZF_c.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsj7RzeQ6M8dc2yDipr1AmpxJU4SllZ-FahwhFAFZZF_c.blob"/></a></figure><h3 id="44c24cc9-3efc-4697-827d-7c3d4bba8518" class="">8.18 - 8.21 Эскиз обычной функции</h3><p id="15d3a8ab-3972-45f7-81c0-8f3c0eec45bb" class="">8.18</p><figure id="a33b5402-d0ef-46a2-afea-956cdb2570bd" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsQtX4u897UKtbnZe1_heLybk7vY56GZnc7x46NqCiEzE.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsQtX4u897UKtbnZe1_heLybk7vY56GZnc7x46NqCiEzE.blob"/></a></figure><figure id="2b61b3b7-658e-4f22-8b28-bd7c91b5caa4" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsAutnmZZV2132_CmcQxpkxD6Hpa16-kay5yP8wuZEL3s.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsAutnmZZV2132_CmcQxpkxD6Hpa16-kay5yP8wuZEL3s.blob"/></a></figure><p id="f424c71d-8353-4017-b214-e9815055776f" class="">8.19</p><figure id="d4132b25-e9fd-4ee8-9820-6ffa335529ee" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsLkNcErrRlNj-uCsgaPxFucKb8Z48p2dWhve1a-QrZIU.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsLkNcErrRlNj-uCsgaPxFucKb8Z48p2dWhve1a-QrZIU.blob"/></a></figure><figure id="9e8d1b78-97d2-4d7d-8ee1-d2a4f9e1cd86" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsoNo7zzpOIDTswd420F3yk09EOs-_kmBXeC6SM6E8130.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsoNo7zzpOIDTswd420F3yk09EOs-_kmBXeC6SM6E8130.blob"/></a></figure><p id="7d6f892f-ef44-4118-864a-3d3ab54307ce" class="">8.20</p><figure id="044d3189-14f9-4b1e-b848-78fd15524456" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsmlqfMV5LScCzCYwy77bFjmRjDPtnlNO_RcqR6Zas6Gw.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsmlqfMV5LScCzCYwy77bFjmRjDPtnlNO_RcqR6Zas6Gw.blob"/></a></figure><figure id="c8366b85-6d9b-4a32-8ab5-c4391accf641" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsYtj7arHzoObkyeNZFPzfoOjDxaEZs2b1JFU3wX5b-3c.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsYtj7arHzoObkyeNZFPzfoOjDxaEZs2b1JFU3wX5b-3c.blob"/></a></figure><p id="50772913-26ff-4d32-a904-9d49807a2a06" class="">8.21</p><figure id="73ad1bff-83c7-4b7c-bb43-f61faf161920" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsAglap5PCUMJgR_0mz0iKMSdsCm5tVVt1oaR8oqoZVkc.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsAglap5PCUMJgR_0mz0iKMSdsCm5tVVt1oaR8oqoZVkc.blob"/></a></figure><figure id="0e42acb2-e2a7-4a51-9ffc-9e4793a419e9" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsM3LvoCv2Ny3OCjEUWcxUvDiGrSLtvq9zOeA_eDnUTac.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsM3LvoCv2Ny3OCjEUWcxUvDiGrSLtvq9zOeA_eDnUTac.blob"/></a></figure><h3 id="394c8ef5-d38b-4c5e-a366-7ba556ed5d80" class="">8.22 - 8.25 Геометрический смысл производной</h3><p id="d5d639cd-3b41-4f9e-a702-05ab008415e9" class="">8.22</p><figure id="8e23f372-73ee-44c8-b898-d17a3fcec584" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsVFyZQY_5CTznrN1KFWQCfqu5tQl06vyYNFW7yfl2cD8.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsVFyZQY_5CTznrN1KFWQCfqu5tQl06vyYNFW7yfl2cD8.blob"/></a></figure><figure id="e8698c92-bf6b-4801-b504-7189149eb1fe" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsQOdc9VxkhKaY0q_5N9eohYEPy4pTAgBRtsEfkQcyAO8.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsQOdc9VxkhKaY0q_5N9eohYEPy4pTAgBRtsEfkQcyAO8.blob"/></a></figure><p id="d02d28f9-5799-4190-a82c-07aaaddf406b" class="">8.23</p><figure id="466c6d6e-9a1b-48c4-89d7-30a4c10b531d" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsmFDdS-I4utsyQT2blOQMLMiMJgSXFdq0dPWS1kjIl1E.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsmFDdS-I4utsyQT2blOQMLMiMJgSXFdq0dPWS1kjIl1E.blob"/></a></figure><figure id="fa50f989-467c-487c-a17a-ab15fe310a5c" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets8TlczKWVAyO0fneDwELJdbcf1tYaWbpDnEA-rcXXX_w.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets8TlczKWVAyO0fneDwELJdbcf1tYaWbpDnEA-rcXXX_w.blob"/></a></figure><p id="f13c9698-7e3b-49db-9823-6028256e507e" class="">8.24</p><figure id="7e1797f4-95ef-4f31-9463-96e086b8c30e" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsQf_SZ21cXoEJ-ns-KnKFshvbArqoQpH6mUrTEfTC-Ns.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsQf_SZ21cXoEJ-ns-KnKFshvbArqoQpH6mUrTEfTC-Ns.blob"/></a></figure><figure id="0bf4f94d-ed73-40a6-a1c4-154509ccd8b0" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsp7wp-QLzX7gUsm_ShZfcS_a1YWZvwYB1So0GE5hjtkc.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsp7wp-QLzX7gUsm_ShZfcS_a1YWZvwYB1So0GE5hjtkc.blob"/></a></figure><p id="889f8268-16de-4b1a-bf62-cd67ec017de5" class="">8.25</p><figure id="bbe689ae-36f4-46cc-8237-5cf5bec1700c" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsW3yqUayjDpeW1vv3rAmgqX8fkRpwnoO7GcutcJAbS-M.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsW3yqUayjDpeW1vv3rAmgqX8fkRpwnoO7GcutcJAbS-M.blob"/></a></figure><figure id="68a87cfe-2177-41ce-beef-3b1c2c5a8606" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsx4FlIjsjySVPfPSQhGoq6gFMCvIqyWOBhm9D8jsdxuQ.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsx4FlIjsjySVPfPSQhGoq6gFMCvIqyWOBhm9D8jsdxuQ.blob"/></a></figure><h3 id="67c275c6-df7f-41ac-b40d-0a5376dbd9ea" class="">8.26 - 8.27 Физический смысл производной</h3><p id="7c27e3d9-6a4a-4a23-9aca-95081da714bf" class="">8.26</p><figure id="13cf94c6-fb06-4cc4-951b-c5896953bded" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsR0OuRknSMarlozt-v2Au6T3EHFcvKpLfrczsTXi-aOo.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsR0OuRknSMarlozt-v2Au6T3EHFcvKpLfrczsTXi-aOo.blob"/></a></figure><figure id="f9b776e8-45a9-495f-b641-92cf3816656f" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsLyXv0ErfuNx4DHzy7olu2MP8Mqaw7gV6zLjnJEqAxu8.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsLyXv0ErfuNx4DHzy7olu2MP8Mqaw7gV6zLjnJEqAxu8.blob"/></a></figure><p id="eacaefac-862f-4d19-86e8-011e8b4d9279" class="">8.27</p><figure id="961ad6c0-ab69-4bcf-abd8-c9f0c9488a0d" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsbb0Uyd8MWLPaoxAe_3IHVMVJgLckq8UhZPKzFSzqicw.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsbb0Uyd8MWLPaoxAe_3IHVMVJgLckq8UhZPKzFSzqicw.blob"/></a></figure><figure id="4ceec340-9e11-4601-a511-6f6e3106ddf2" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsCX5Y2-SYMJh_EkF4kijYA9vLA6OT3NO5R2xm6jgjKWU.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsCX5Y2-SYMJh_EkF4kijYA9vLA6OT3NO5R2xm6jgjKWU.blob"/></a></figure><h3 id="954d3b24-a24a-4f43-8b5d-0c05e14a8f13" class="">8.28 - 8.29 Сравнение значений тангенса</h3><p id="d419a74c-4b50-4a9a-a7e8-285e61e88dac" class="">8.28</p><figure id="ead29ed7-1a0e-4fbf-bdba-f9c7ac9d9166" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsWPo99lNu8GEMA_D_O61a0y4N-VthgTN-jgchwgzdZJ4.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsWPo99lNu8GEMA_D_O61a0y4N-VthgTN-jgchwgzdZJ4.blob"/></a></figure><figure id="cfcddccf-1cdd-4af0-89e1-73f96b65f79e" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsnmP8GhBtjV-Fl4vLyJkPsWXly6gl8bzViNRJIXb-6hY.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsnmP8GhBtjV-Fl4vLyJkPsWXly6gl8bzViNRJIXb-6hY.blob"/></a></figure><p id="1cef3309-55d8-4e8d-9ad1-9c3579119213" class="">8.29</p><figure id="d278622b-1329-41f7-96e9-49980f57d3fc" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsn0Acm1U-uI_GSD9wBQXRTNY4XU54ynaby6-fYY90vrE.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsn0Acm1U-uI_GSD9wBQXRTNY4XU54ynaby6-fYY90vrE.blob"/></a></figure><figure id="cc140ec2-3abe-465e-8cb7-13d34a450cef" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsiuT-afn9173Ilm0baXpsPKp_NWHuH8P9k_li_PVjoPc.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsiuT-afn9173Ilm0baXpsPKp_NWHuH8P9k_li_PVjoPc.blob"/></a></figure><h3 id="0dfa391f-c3ab-419f-a889-b14413f45bf6" class="">8.30 - 8.34 Касательная параллельна или совпадает</h3><p id="b3de3083-17d5-48f4-9f76-d544e731df5f" class="">8.30</p><figure id="901e601d-172c-4281-b0ba-33a4adc725ce" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets3vs7oZ4c5eSIMSEooW2S6TYkJR4KNGpTTDvCeHN8mvU.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets3vs7oZ4c5eSIMSEooW2S6TYkJR4KNGpTTDvCeHN8mvU.blob"/></a></figure><figure id="37befb52-5f48-4634-82d0-3466f412a9de" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsc2lEgyqeHvSgUQTZ7kRz30aoKKvdxF4MZmyBxdjXsxc.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsc2lEgyqeHvSgUQTZ7kRz30aoKKvdxF4MZmyBxdjXsxc.blob"/></a></figure><p id="44bc3e7c-d9a6-4a90-86b5-77b6a291a2f9" class="">8.31</p><figure id="32db49f4-19bd-4dd9-b858-12c17b7aa747" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetswhHrib1O6F_oEUtYG3MMFDudxAW5oYmJBSLeqfD_5qo.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetswhHrib1O6F_oEUtYG3MMFDudxAW5oYmJBSLeqfD_5qo.blob"/></a></figure><figure id="ff638006-6c3f-4afe-8b3f-5c92e4cd85c2" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsI4Dr8TQQeQmJj0ZjXUZa9e8IT2tcZgftpluET8lFdZM.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsI4Dr8TQQeQmJj0ZjXUZa9e8IT2tcZgftpluET8lFdZM.blob"/></a></figure><p id="fbd08c05-15c3-4f14-ac53-7a2273cd0063" class="">8.32</p><figure id="a4c6b6c7-5d13-41de-91cf-23739f6dceb8" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsT2ulxgNKHUxGyHzrZln52niOLmynsKAD4uJ_hLIl19g.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsT2ulxgNKHUxGyHzrZln52niOLmynsKAD4uJ_hLIl19g.blob"/></a></figure><figure id="ee4d32f8-b7eb-47bf-a84c-99ea28e8966b" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsMPIV2_-DHp0rwIodl-9c3lvmZh2IbBasoxl0fqAf9tE.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsMPIV2_-DHp0rwIodl-9c3lvmZh2IbBasoxl0fqAf9tE.blob"/></a></figure><p id="c2a95dcd-90e3-4f61-b64c-59ddbb2902da" class="">8.33</p><figure id="6e93ec9f-08a7-45cd-b4bc-6dbeb740540b" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsAVdPpQ3Eq46cLHRNfYJyALdRhu5V4KIwm7O-kqboSaQ.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsAVdPpQ3Eq46cLHRNfYJyALdRhu5V4KIwm7O-kqboSaQ.blob"/></a></figure><figure id="bd86ca97-8802-4800-afe1-48d355cdd9d2" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsJiQ0mNwbspuLR_IPhdcf-Rv6o1QGu0C-TQGR-4wtKWU.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsJiQ0mNwbspuLR_IPhdcf-Rv6o1QGu0C-TQGR-4wtKWU.blob"/></a></figure><p id="4f41b9b8-3cd6-4411-b9a0-d4140afabe3d" class="">8.34</p><figure id="db0cad9e-e67a-4158-a382-3c4bce64422a" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsAiAZbrAeO4Of7chgrp9qsUmz1r0QBj8wOHhYrVN0BGA.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsAiAZbrAeO4Of7chgrp9qsUmz1r0QBj8wOHhYrVN0BGA.blob"/></a></figure><figure id="87f3541d-4369-4eeb-81fb-c1f5348f6d3f" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsVV0FSgdyA2ntewKo93nSUSPHd1PynBR15_mZrLIJ6og.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsVV0FSgdyA2ntewKo93nSUSPHd1PynBR15_mZrLIJ6og.blob"/></a></figure><h3 id="5f5eb3f9-30d6-4651-95c4-534e7692c481" class="">8.35 - 8.38 Условие касания</h3><p id="77dbedd0-2cd8-4f38-a4cb-4127268d073b" class="">8.35</p><figure id="b09136aa-ce05-4d86-b12b-bed5afdac67e" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets-jx2TMZHInfz0joSRmyx25-VG3NiAw2WnxA_Db2Jp6U.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets-jx2TMZHInfz0joSRmyx25-VG3NiAw2WnxA_Db2Jp6U.blob"/></a></figure><figure id="5b8f59a5-fd7c-478d-8bdd-8cf9f99620ae" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsDF5fetucpMgWzqZi6B9YMlkvbCTpeD3ex4-viwZDUwk.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsDF5fetucpMgWzqZi6B9YMlkvbCTpeD3ex4-viwZDUwk.blob"/></a></figure><p id="c0031da2-9a4c-4675-a204-3b9db6b8b2d1" class="">8.36</p><figure id="7dde85f8-6a21-4e8b-9554-fdb821e8886a" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsaIZ3Ienkly0SrUrnW6sbmWhwzG3Xg5DCIRK4CnynAgI.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsaIZ3Ienkly0SrUrnW6sbmWhwzG3Xg5DCIRK4CnynAgI.blob"/></a></figure><figure id="e8737945-ff41-40d4-9446-39af04299256" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsfObG4D3uJ8FA81BHS9IdE1DaUeuuDY0Ej7CQMA053UE.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsfObG4D3uJ8FA81BHS9IdE1DaUeuuDY0Ej7CQMA053UE.blob"/></a></figure><p id="4d19d7cb-d815-4438-96ea-6d5d948f4941" class="">8.37</p><figure id="b0b8d21c-8859-4afa-813e-44f493bbe517" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsdFMxNKidr98bJQcKTxHiVd30qKg9BqNzJwCMSlmJ4r0.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsdFMxNKidr98bJQcKTxHiVd30qKg9BqNzJwCMSlmJ4r0.blob"/></a></figure><figure id="41b58e03-3434-4f2c-b898-6f13ad471633" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets7DrHwxcTDP1o3x3_n0b1IZUjjrCWG7EE122cUGLuRnM.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets7DrHwxcTDP1o3x3_n0b1IZUjjrCWG7EE122cUGLuRnM.blob"/></a></figure><p id="a1f56b4a-a81b-4aa0-882d-edd8cea593ce" class="">8.38</p><figure id="7474da0f-b3be-403c-98b2-4a1f0a5965be" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsS3ks4XNjdxvdI0JW3_i_tJzANcXgNyoO_zB9AJNaIXc.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsS3ks4XNjdxvdI0JW3_i_tJzANcXgNyoO_zB9AJNaIXc.blob"/></a></figure><figure id="4ec57e8a-b9c5-4d1d-ba2a-e1312457a52b" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets8Wgotd2n88rHzcgV2zeZLjbLZolyP_bgoVXdmvl1qhk.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets8Wgotd2n88rHzcgV2zeZLjbLZolyP_bgoVXdmvl1qhk.blob"/></a></figure><h3 id="1d41d678-cff5-4ee7-ad9b-7a0cb45e2884" class="">8.39- 8.44 Первообразная</h3><p id="039d53e5-7b4a-4990-b000-c0234837e1e8" class="">8.39</p><figure id="94354882-a8c5-4e09-a381-a996b665c23e" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetskun0I4PfyQcowghcghOBkAz1EE9g0Aoz2bUQkXlHr2c.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetskun0I4PfyQcowghcghOBkAz1EE9g0Aoz2bUQkXlHr2c.blob"/></a></figure><figure id="8495e41e-4591-4ff3-8f61-1efe82022b7b" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets1yf6nMkxggYWxiTUkFnEGvbF0PBUKPxf6ePhEG02OPI.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets1yf6nMkxggYWxiTUkFnEGvbF0PBUKPxf6ePhEG02OPI.blob"/></a></figure><p id="d9343d66-3830-426f-b6ad-64e54567ea97" class="">8.40</p><figure id="2152b63e-d82c-4cd7-9d25-e84b3e869819" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsDWcNvrY0wPVJpMt8LDLYKRkBZI5bJVPwje5--tRKUB0.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsDWcNvrY0wPVJpMt8LDLYKRkBZI5bJVPwje5--tRKUB0.blob"/></a></figure><figure id="9a73a466-478b-4481-9207-aed304439bf3" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsZHrwPBKoOJ1I36-7NalRVaTRVeJNqzc1pvxGkaIhRC0.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsZHrwPBKoOJ1I36-7NalRVaTRVeJNqzc1pvxGkaIhRC0.blob"/></a></figure><p id="409bf1bc-a076-43df-9ef2-fd38e9603990" class="">8.41</p><figure id="2ba2ba74-cba1-4299-92c4-40cec7aa3700" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsvCRC2K10eKF5y4bUatSHW65o4wGNBGGWFwAoCjTvM2A.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsvCRC2K10eKF5y4bUatSHW65o4wGNBGGWFwAoCjTvM2A.blob"/></a></figure><figure id="2f4e2404-a619-4e89-a7af-ff6e1a86665f" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsvtcGVKSUrTevhK5tL9JYDRpvXLuLtTflrdsQ9nIG-rY.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsvtcGVKSUrTevhK5tL9JYDRpvXLuLtTflrdsQ9nIG-rY.blob"/></a></figure><p id="10a7ef8e-1a50-4abb-87ab-f013e784ba0c" class="">8.42</p><figure id="566d4d6d-0efa-4708-9e5e-32373da0aa04" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsqRB9Jp1GII-Wb9KrwKZ92vtbjxYdr4tmn-xwOGyodtM.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsqRB9Jp1GII-Wb9KrwKZ92vtbjxYdr4tmn-xwOGyodtM.blob"/></a></figure><figure id="09baf25e-cf4c-4e80-b7de-9667677a1727" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsl2qHjaTrsumNghiFNnKS4TSveIp-9f-GUuH8Ux9fhKI.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsl2qHjaTrsumNghiFNnKS4TSveIp-9f-GUuH8Ux9fhKI.blob"/></a></figure><p id="6b35afc5-d813-4bd7-aba3-cfee23993d13" class="">8.43</p><figure id="d23965f9-f1cf-4c93-9e67-4bd793323487" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsZfQAUtaYg6B51p2HHVdHrJEyiXyh3cmaWhMtPZlia1Q.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsZfQAUtaYg6B51p2HHVdHrJEyiXyh3cmaWhMtPZlia1Q.blob"/></a></figure><figure id="60f812a3-ea9b-45cc-ba4a-c5da9a33523f" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetswAHuzMk2lV69saNFC1NsAYjojXoYTdkLVQeI3W26yO4.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetswAHuzMk2lV69saNFC1NsAYjojXoYTdkLVQeI3W26yO4.blob"/></a></figure><p id="c5859f5d-1489-47d6-9fde-bd5fe65b6cc5" class="">8.44</p><figure id="683ceff5-59ac-4035-8eb8-f519fabe0637" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets8tOsu8RgEiBNUAs2yGZBbp9Ci2UvQqrtyhSdH-vg09Q.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assets8tOsu8RgEiBNUAs2yGZBbp9Ci2UvQqrtyhSdH-vg09Q.blob"/></a></figure><figure id="9ddc7c7c-c861-4649-9a65-7e4340f18a51" class="image"><a href="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsDugMdHCRoTSB8s3b-930C03QSaBdF-ZYuu_NO3ECIlY.blob"><img src="%D0%97%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5%208%2012c5da17dbee414c94345878461a2322/assetsDugMdHCRoTSB8s3b-930C03QSaBdF-ZYuu_NO3ECIlY.blob"/></a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
